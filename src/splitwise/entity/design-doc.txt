@@ -1,0 +1,31 @@
+Problem Statement:
+>Design Splitwise - Debt Simplification System
+
+Requirements:
+> Basic - login, register, manage group, invite users to group, join group
+> Users should be able to add expense and split them equally or unequally
+> System should be able to simplify the debt for all members of group in order to
+reduce the # transactions to be made
+
+Actors: User
+
+Entities:
+User(id, email, phone, name),
+Group(id, name, User:admin, User:createdBy),
+Expense(id, amount, date, List<User_Expense>paidBy, List<User_Expense>owedBy),
+User_Expense(id, User:addedBy, amount, expense_type(paid/owed))
+User_Group_Mapping(id, User:user, Group:group),
+Group_Expense_Mapping(id, Group:group, List<Expense>:expenses)
+
+Behaviours:
+> Crud -> Expense, User, Group
+> inviteUsersToGroup
+> simplifyExpenses(Group)
+
+APIs:
+> Crud -> Expense, User, Group
+> inviteUsersToGroup
+
+Design Patterns:
+> Factory and Strategy for debtSimplification - Greedy With Heap, DFS
+

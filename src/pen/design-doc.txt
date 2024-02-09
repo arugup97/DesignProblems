@@ -1,0 +1,37 @@
+Problem Statement:
+>Design Pen
+
+Requirements:
+>Pen should have its  - name, brand
+>Pen should be able to write
+>Support multiple types of pen - gel, ball, fountain, marker
+>Support multiple nib types - round, fountainNib
+>Support multiple types of pen : notrefill, refill
+>Multiple ink colors
+>Ball pen will have ball pen ink and same for others
+>Refill has a tip and ink
+>Refill has a radius
+>fountain pen, it's tip has a radius
+>Some pen write in different way
+>Some pen write in same way
+>Some pens may allow refilling, some may not
+
+Entities:
+Pen[id, name, brand, type, price, write()]
+Refill[inkColor, radius, type]
+PenType[Gel, Ball, Fountain]
+Ink[color, brand, type[Gel, Ball, Fountain]], Nib[radius, type[Gel, Ball, Fountain]],
+BallPen, GelPen, FountainPen[inkRadius], MarkerPen
+WritingStrategy[write()]
+FountainPenWritingStrategy, GelBallPenWritingStrategy, MarkerPenWritingStrategy
+
+Behaviours:
+>write()
+>changeRefill(refill)
+
+Design Patterns:
+>Strategy
+
+Solid:
+Used all but Dependancy inversion
+
